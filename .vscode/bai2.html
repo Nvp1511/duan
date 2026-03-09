@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 2</title>
+
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      td {
+        border: 1px solid black;
+        height: 200px;
+        position: relative;
+      }
+
+      .layer {
+        position: absolute;
+        left: 80px;
+        top: 80px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- BẢNG 1 -->
+    <table>
+      <tr>
+        <td>
+          <button onclick="move('t1', 'left')">Move left</button>
+          <button onclick="move('t1', 'right')">Move right</button>
+          <button onclick="move('t1', 'up')">Move up</button>
+          <button onclick="move('t1', 'down')">Move down</button>
+
+          <div id="t1" class="layer">This is a positionable layer.</div>
+        </td>
+
+        <!-- BẢNG 2 -->
+        <td>
+          <button onclick="move('t2', 'left')">Move left</button>
+          <button onclick="move('t2', 'right')">Move right</button>
+          <button onclick="move('t2', 'up')">Move up</button>
+          <button onclick="move('t2', 'down')">Move down</button>
+
+          <div id="t2" class="layer">This is a positionable layer.</div>
+        </td>
+
+        <!-- BẢNG 3 -->
+        <td>
+          <button onclick="move('t3', 'left')">Move left</button>
+          <button onclick="move('t3', 'right')">Move right</button>
+          <button onclick="move('t3', 'up')">Move up</button>
+          <button onclick="move('t3', 'down')">Move down</button>
+
+          <div id="t3" class="layer">This is a positionable layer.</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Hình 1</td>
+        <td>Hình 2</td>
+        <td>Hình 3</td>
+      </tr>
+    </table>
+
+    <script>
+      var step = 10;
+
+      function move(id, dir) {
+        var obj = document.getElementById(id);
+
+        // lấy vị trí hiện tại
+        var x = parseInt(obj.style.left) || 80;
+        var y = parseInt(obj.style.top) || 80;
+
+        if (dir == "left") x -= step;
+        if (dir == "right") x += step;
+        if (dir == "up") y -= step;
+        if (dir == "down") y += step;
+
+        obj.style.left = x + "px";
+        obj.style.top = y + "px";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+.myshorthand {
+  border-top: dashed double green;
+  border-bottom: #ff0000 20 double;
+  border-right: dotted #0000ff thick;
+  border-left: inset medium rgb(255, 0, 255);
+}
+.img {
+  float: right;
+}
+.text_line {
+  clear: both;
+}
+.thumbnail {
+  float: left;
+  width: 110px;
+  height: 90px;
+  margin: 5px;
+}
+.clip {
+  position: absolute;
+  clip: rect(0px, 120px, 200px, 0px);
+}
+.frame{
+border: dashed medium red 
+width: 30px;
+}

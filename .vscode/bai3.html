@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 3</title>
+
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td {
+        border: 1px solid black;
+        width: 33%;
+        height: 200px;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .box {
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Lựa chọn Theme giao diện:</h2>
+    <select onchange="changeTheme(this.value)">
+      <option value="1">Theme 1</option>
+      <option value="2">Theme 2</option>
+      <option value="3">Theme 3</option>
+    </select>
+
+    <br /><br />
+
+    <table>
+      <tr>
+        <td id="h1" class="box">Theme 1</td>
+        <td id="h2" class="box">Theme 2</td>
+        <td id="h3" class="box">Theme 3</td>
+      </tr>
+      <tr>
+        <td>Hình 1</td>
+        <td>Hình 2</td>
+        <td>Hình 3</td>
+      </tr>
+    </table>
+
+    <script>
+      function changeTheme(t) {
+        // reset màu
+        document.getElementById("h1").style = "";
+        document.getElementById("h2").style = "";
+        document.getElementById("h3").style = "";
+
+        if (t == 1) {
+          document.getElementById("h1").style.background = "white";
+          document.getElementById("h1").style.color = "black";
+        }
+
+        if (t == 2) {
+          document.getElementById("h2").style.background = "pink";
+          document.getElementById("h2").style.color = "red";
+        }
+
+        if (t == 3) {
+          document.getElementById("h3").style.background = "green";
+          document.getElementById("h3").style.color = "yellow";
+        }
+      }
+    </script>
+  </body>
+</html>

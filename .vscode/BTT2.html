@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 1</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Bài 1: Tạo trang HTML</h3>
+
+    <p id="p1">1. Đoạn văn 1.</p>
+    <p id="p2">2. Đoạn văn 2.</p>
+    <p id="p3">3. Đoạn văn 3.</p>
+
+    <h4>Có thể ẩn các đoạn văn bằng cách bỏ chọn tại các hộp kiểm</h4>
+
+    <input
+      type="checkbox"
+      id="chk1"
+      checked
+      onclick="toggleParagraph('p1', 'chk1')"
+    />
+    Hiển thị đoạn văn 1 <br />
+
+    <input
+      type="checkbox"
+      id="chk2"
+      checked
+      onclick="toggleParagraph('p2', 'chk2')"
+    />
+    Hiển thị đoạn văn 2 <br /><br />
+
+    <h4>
+      Thay thế đoạn văn thứ 3 bằng cách gõ nội dung thay thế trong hộp text, sau
+      đó nhấn nút thay đổi
+    </h4>
+
+    <input type="text" id="txtNew" placeholder="Nhập nội dung mới" />
+    <button onclick="replaceParagraph()">Thay thế</button>
+
+    <script>
+      // Ẩn / hiện đoạn văn
+      function toggleParagraph(pid, cid) {
+        let p = document.getElementById(pid);
+        let chk = document.getElementById(cid);
+
+        if (chk.checked) p.style.display = "block";
+        else p.style.display = "none";
+      }
+
+      // Thay thế đoạn văn 3
+      function replaceParagraph() {
+        let text = document.getElementById("txtNew").value;
+        if (text.trim() !== "")
+          document.getElementById("p3").innerHTML = "3. " + text;
+      }
+    </script>
+  </body>
+</html>
